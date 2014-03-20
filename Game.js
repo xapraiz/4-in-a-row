@@ -36,7 +36,7 @@ function do_next_move() {
 
 function check_valid_move(board,row,column) {
 	if(board[row][column].occupied == true) {
-    status_message = "There is already a coin on this field.";
+    status_message = "Badago fitxa bat lehendik kasilla horretan.";
 	return false;
     } else {
     status_message = "Your move will be executed player " + current_player.playerindex;
@@ -68,7 +68,7 @@ function change_player(current_player) {
   	current_player = player2;
 	other_player = player1; }
 	else { current_player = player1; other_player = player2;}
-	status_message = "Player:  " + current_player.playerindex + " (" + current_player.playertype + ") please make a move."
+	status_message = "Jokalaria:  " + current_player.playerindex + " (" + current_player.playertype + ") mesedez mugitu fitxa."
 	return current_player;
 }
 
@@ -141,7 +141,7 @@ var total_vertical = top + down + 1;
 var total_diagonal_1 = left_top + right_down + 1;
 var total_diagonal_2 = right_top + left_down + 1;
 
-if(total_horizontal > 3 || total_vertical > 3 || total_diagonal_1 > 3 || total_diagonal_2 > 3) { running = false; winner = playerindex; status_message="There is a winner. Player " + winner + " has won the game! <button onclick=location.reload(true)>Start a new game!</button>"; $('.status').html(status_message); return true; } else { return false;
+if(total_horizontal > 3 || total_vertical > 3 || total_diagonal_1 > 3 || total_diagonal_2 > 3) { running = false; winner = playerindex; status_message="Irabazlea dago. " + winner + " jokalariak irabazi du! <button onclick=location.reload(true)>Hasi Joko berria!</button>"; $('.status').html(status_message); return true; } else { return false;
 	
 }
 };

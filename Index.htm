@@ -3,7 +3,7 @@
 <html>
 
 <head>
-<title>4 in a row!</title>
+<title>4 lerroan</title>
 
 <script src="CssRenderer.js"></script>
 <script src="Game.js"></script>
@@ -35,7 +35,7 @@ body {
 }
 
 .player1 {
-            background-color: yellow;
+            background-color: green;
             transition: background-color 1s linear;
             -moz-transition: background-color 1s linear;
             -webkit-transition: background-color 1s linear;
@@ -111,33 +111,33 @@ body {
 </head>
 
 <body>
-        <div class="header">4-in-row game</div>
+        <div class="header">4 lerroan</div>
 		<div class="settings">
 			<form>
 			<table>
 			<tr>
-				<td colspan="3">Welcome to the game.</td>
+				<td colspan="3">Ongi etorri 4 lerroan jokora</td>
 			</tr>
 			<tr>
-				<td>Please select player 1:</td>
-				<td><input type="radio" name="player1options" value="Human" checked="checked"/>Human</td>
-				<td><input type="radio" name="player1options" value="Computer" /> Computer</td>
+				<td>Aukeratu 1 jokalaria:</td>
+				<td><input type="radio" name="player1options" value="Human" checked="checked"/>Pertsona</td>
+				<td><input type="radio" name="player1options" value="Computer" /> Ordenagaildua</td>
 			</tr>
 			<tr>
-				<td>Please select player 2: </td>
-				<td><input type="radio" name="player2options" value="Human"/>Human</td>
-				<td><input type="radio" name="player2options" value="Computer" checked="checked"/>Computer</td>
+				<td>Aukeratu 2 jokalaria: </td>
+				<td><input type="radio" name="player2options" value="Human"/>Pertsona</td>
+				<td><input type="radio" name="player2options" value="Computer" checked="checked"/>Ordenagaildua</td>
 			</tr>	
 			<tr>
-				<td>Please select game type: </td>
-				<td><input type="radio" name="game_type" value="Traditional" checked="checked"/>Traditional game</td> 
-				<td><input type="radio" name="game_type" value="Drop_anywhere"/>Special game*</td>
+				<td>Aukeratu Joko mota: </td>
+				<td><input type="radio" name="game_type" value="Traditional" checked="checked"/>Klasikoa</td> 
+				<td><input type="radio" name="game_type" value="Drop_anywhere"/>Berezia*</td>
 			</tr>
 			<tr>
-				<td colspan="3"><i>*In the special game coins can be dropped at each position (this is fun!)</i></td>
+				<td colspan="3"><i>*Modu berezian fitxak ez dira erortzen. Jartzen diren lekuan gelditzen dira</i></td>
 			</tr>	
 			<tr>
-				<td colspan="3"><input type='button' class="start" value="Start the game!"/>.</td>
+				<td colspan="3"><input type='button' class="start" value="Jokoa Hasi!"/>.</td>
 			</tr>
 			</table>	
 			</form>
