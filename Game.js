@@ -4,10 +4,13 @@ var running = false;
 var winner = 0;
 var status_message = "";
 var game_type = "";
+var color;
 
-var player = function(index,type) {
+var player = function(index,type,colorCoin) {
 	this.playerindex = index;
 	this.playertype = type;
+	this.color=colorCoin;
+	
 };
 
 var do_move = function(board,row,column) {
@@ -73,7 +76,6 @@ function change_player(current_player) {
 }
 
 function determine_if_winner_exists(board,row,column,playerindex) {
-
 var right = 0;
 var left = 0;
 var top = 0;
