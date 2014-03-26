@@ -5,6 +5,12 @@ var winner = 0;
 var status_message = "";
 var game_type = "";
 var turnoak=1;
+var puntuazioa1 = 0;
+var triple1 = 0;
+var doble1 = 0;
+var puntuazioa2 = 0;
+var triple2 = 0;
+var doble2 = 0;
 
 var player = function(index,type) {
 	this.playerindex = index;
@@ -143,7 +149,41 @@ var total_vertical = top + down + 1;
 var total_diagonal_1 = left_top + right_down + 1;
 var total_diagonal_2 = right_top + left_down + 1;
 
-if(total_horizontal > 3 || total_vertical > 3 || total_diagonal_1 > 3 || total_diagonal_2 > 3) { running = false; winner = playerindex; status_message="Irabazlea dago. " + winner + " jokalariak irabazi du! <button onclick=location.reload(true)>Hasi Joko berria!</button> turnoak ="+turnoak; $('.status').html(status_message); return true; } else { return false;
+if(total_horizontal > 3 || total_vertical > 3 || total_diagonal_1 > 3 || total_diagonal_2 > 3) { 
+	running = false; 
+	winner = playerindex; 
+
+	puntuazioa1 = (turnoak*500) + (triple1*2000) + (doble1*1000);
+	puntuazioa2 = (turnoak*500) + (triple2*2000) + (doble2*1000);
+	if (current_player == player1){
+		puntuazioa1 = puntuazioa1 + 10000;
+	}else{
+		puntuazioa2 = puntuazioa2 + 10000;
+	}
+	
+	status_message="Irabazlea dago. " + winner + " jokalariak irabazi du! <button onclick=location.reload(true)>Hasi Joko berria!</button> Puntuazioa Player 1 ="+puntuazioa1+"|Puntuazioa Player 2 ="+puntuazioa2;
+	$('.status').html(status_message);
+	return true;
+} else {
+	if (current_player == player1){
+		if(total_horizontal > 2 || total_vertical > 2 || total_diagonal_1 > 2 || total_diagonal_2 > 2) { 
+		triple1 ++;
+		doble1 --;
+		}
+		if(total_horizontal > 1 || total_vertical > 1 || total_diagonal_1 > 1 || total_diagonal_2 > 1) { 
+		doble1 ++;
+		}
+	}else{
+		if(total_horizontal > 2 || total_vertical > 2 || total_diagonal_1 > 2 || total_diagonal_2 > 2) { 
+		triple2 ++;
+		doble2 --;
+		}
+		if(total_horizontal > 1 || total_vertical > 1 || total_diagonal_1 > 1 || total_diagonal_2 > 1) { 
+		doble2 ++;
+		}
+	}
+	return false;
 	
 }
+
 };
