@@ -87,6 +87,7 @@ body {
 	$('.board').hide("slow");	
 	
 	$('.start').click(function() {
+	
 		var player_1 = $('input:radio[name=player1options]:checked').val();	
 		var player_2 = $('input:radio[name=player2options]:checked').val();	
 		game_type = $('input:radio[name=game_type]:checked').val();	
@@ -109,7 +110,9 @@ body {
 		current_player = player1;
 		other_player = player2;
 		running = true;
-		do_next_move();		
+		do_next_move();	
+
+
 		}
 		}
 	});

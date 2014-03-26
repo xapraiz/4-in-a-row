@@ -4,6 +4,7 @@ var running = false;
 var winner = 0;
 var status_message = "";
 var game_type = "";
+var turnoak=1;
 
 var player = function(index,type) {
 	this.playerindex = index;
@@ -32,6 +33,7 @@ function do_next_move() {
 	if(current_player.playertype=="Computer" && running == true) {
 	bot_move = do_bot_move(board,current_player.playerindex);
 	do_move(board,bot_move[1],bot_move[0],current_player.playerindex);
+	turnoak ++;
 	}
 };
 
@@ -141,7 +143,7 @@ var total_vertical = top + down + 1;
 var total_diagonal_1 = left_top + right_down + 1;
 var total_diagonal_2 = right_top + left_down + 1;
 
-if(total_horizontal > 3 || total_vertical > 3 || total_diagonal_1 > 3 || total_diagonal_2 > 3) { running = false; winner = playerindex; status_message="Irabazlea dago. " + winner + " jokalariak irabazi du! <button onclick=location.reload(true)>Hasi Joko berria!</button>"; $('.status').html(status_message); return true; } else { return false;
+if(total_horizontal > 3 || total_vertical > 3 || total_diagonal_1 > 3 || total_diagonal_2 > 3) { running = false; winner = playerindex; status_message="Irabazlea dago. " + winner + " jokalariak irabazi du! <button onclick=location.reload(true)>Hasi Joko berria!</button> turnoak ="+turnoak; $('.status').html(status_message); return true; } else { return false;
 	
 }
 };
