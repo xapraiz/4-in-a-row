@@ -4,12 +4,10 @@ var running = false;
 var winner = 0;
 var status_message = "";
 var game_type = "";
-var color;
 
-var player = function(index,type,colorCoin) {
+var player = function(index,type) {
 	this.playerindex = index;
 	this.playertype = type;
-	this.color=colorCoin;
 	
 };
 

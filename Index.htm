@@ -102,8 +102,8 @@ body {
 		$("head").append('<style>.player2 { background-color: '+color2+' }</style>');
 		$('.settings').hide(); 
 		$('.board').show();
-		player1 = new player(1,$('input:radio[name=player1options]:checked').val(),'black');
-		player2 = new player(2,$('input:radio[name=player2options]:checked').val(),'white');
+		player1 = new player(1,$('input:radio[name=player1options]:checked').val());
+		player2 = new player(2,$('input:radio[name=player2options]:checked').val());
 		current_player = player1;
 		other_player = player2;
 		running = true;
