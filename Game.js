@@ -153,12 +153,12 @@ if(total_horizontal > 3 || total_vertical > 3 || total_diagonal_1 > 3 || total_d
 	running = false; 
 	winner = playerindex; 
 
-	puntuazioa1 = (turnoak*500) + (triple1*2000) + (doble1*1000);
-	puntuazioa2 = (turnoak*500) + (triple2*2000) + (doble2*1000);
+	puntuazioa1 = (turnoak*200) + (triple1*3000) + (doble1*500);
+	puntuazioa2 = (turnoak*200) + (triple2*3000) + (doble2*500);
 	if (current_player == player1){
-		puntuazioa1 = puntuazioa1 + 10000;
+		puntuazioa1 = puntuazioa1 + 20000;
 	}else{
-		puntuazioa2 = puntuazioa2 + 10000;
+		puntuazioa2 = puntuazioa2 + 20000;
 	}
 	
 	status_message="Irabazlea dago. " + winner + " jokalariak irabazi du! <button onclick=location.reload(true)>Hasi Joko berria!</button> Puntuazioa Player 1 ="+puntuazioa1+"|Puntuazioa Player 2 ="+puntuazioa2;
@@ -166,20 +166,62 @@ if(total_horizontal > 3 || total_vertical > 3 || total_diagonal_1 > 3 || total_d
 	return true;
 } else {
 	if (current_player == player1){
-		if(total_horizontal > 2 || total_vertical > 2 || total_diagonal_1 > 2 || total_diagonal_2 > 2) { 
-		triple1 ++;
-		doble1 --;
+		if(total_horizontal == 3){ 
+			triple1 ++;
+			doble1 --;
 		}
-		if(total_horizontal == 2 || total_vertical == 2 || total_diagonal_1 == 2 || total_diagonal_2 == 2) { 
-		doble1 ++;
+		if  (total_vertical == 3 ){
+			triple1 ++;
+			doble1 --;
+		} 
+		if(total_diagonal_1 == 3 ){
+			triple1 ++;
+			doble1 --;
+		}
+		if (total_diagonal_2 == 3){
+			triple1 ++;
+			doble1 --;
+		}
+		if(total_horizontal == 2){ 
+			doble1 ++;
+		}
+		if  (total_vertical == 2 ){
+			doble1 ++;
+		} 
+		if(total_diagonal_1 == 2 ){
+			doble1 ++;
+		}
+		if (total_diagonal_2 == 2){
+			doble1 ++;
 		}
 	}else{
-		if(total_horizontal > 2 || total_vertical > 2 || total_diagonal_1 > 2 || total_diagonal_2 > 2) { 
-		triple2 ++;
-		doble2 --;
+		if(total_horizontal == 3){ 
+			triple2 ++;
+			doble2 --;
 		}
-		if(total_horizontal == 2 || total_vertical == 2 || total_diagonal_1 == 2 || total_diagonal_2 == 2) { 
-		doble2 ++;
+		if  (total_vertical == 3 ){
+			triple2 ++;
+			doble2 --;
+		} 
+		if(total_diagonal_1 == 3 ){
+			triple2 ++;
+			doble2 --;
+		}
+		if (total_diagonal_2 == 3){
+			triple2 ++;
+			doble2 --;
+		}
+		if(total_horizontal == 2){ 
+			doble2 ++;
+		}
+		if  (total_vertical == 2 ){
+			doble2 ++;
+		} 
+		if(total_diagonal_1 == 2 ){
+			doble2 ++;
+		}
+		if (total_diagonal_2 == 2){
+			doble2 ++;
 		}
 	}
 	return false;
