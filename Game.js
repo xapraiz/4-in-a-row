@@ -170,7 +170,7 @@ if(total_horizontal > 3 || total_vertical > 3 || total_diagonal_1 > 3 || total_d
 		triple1 ++;
 		doble1 --;
 		}
-		if(total_horizontal > 1 || total_vertical > 1 || total_diagonal_1 > 1 || total_diagonal_2 > 1) { 
+		if(total_horizontal == 2 || total_vertical == 2 || total_diagonal_1 == 2 || total_diagonal_2 == 2) { 
 		doble1 ++;
 		}
 	}else{
@@ -178,7 +178,7 @@ if(total_horizontal > 3 || total_vertical > 3 || total_diagonal_1 > 3 || total_d
 		triple2 ++;
 		doble2 --;
 		}
-		if(total_horizontal > 1 || total_vertical > 1 || total_diagonal_1 > 1 || total_diagonal_2 > 1) { 
+		if(total_horizontal == 2 || total_vertical == 2 || total_diagonal_1 == 2 || total_diagonal_2 == 2) { 
 		doble2 ++;
 		}
 	}
