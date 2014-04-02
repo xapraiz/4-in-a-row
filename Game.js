@@ -162,8 +162,10 @@ if(total_horizontal > 3 || total_vertical > 3 || total_diagonal_1 > 3 || total_d
 		puntuazioa2 = puntuazioa2 + 20000;
 	}
 	
-	status_message="Irabazlea dago. " + winner + " jokalariak irabazi du! <button onclick=location.reload(true)>Hasi Joko berria!</button> Puntuazioa Player 1 ="+puntuazioa1+"|Puntuazioa Player 2 ="+puntuazioa2;
+	status_message="Irabazlea dago. " + winner + " jokalariak irabazi du! <button onclick=location.reload(true)>Hasi Joko berria!</button>";
 	$('.status').html(status_message);
+	$('.punto1').html(puntuazioa1);
+	$('.punto2').html(puntuazioa2);
 	return true;
 } else {
 	
