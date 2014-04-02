@@ -4,7 +4,8 @@ var running = false;
 var winner = 0;
 var status_message = "";
 var game_type = "";
-var turnoak=1;
+var turnoak1=1;
+var turnoak2=1;
 var puntuazioa1 = 0;
 var triple1 = 0;
 var doble1 = 0;
@@ -39,7 +40,7 @@ function do_next_move() {
 	if(current_player.playertype=="Computer" && running == true) {
 	bot_move = do_bot_move(board,current_player.playerindex);
 	do_move(board,bot_move[1],bot_move[0],current_player.playerindex);
-	turnoak ++;
+	
 	}
 };
 
@@ -153,8 +154,8 @@ if(total_horizontal > 3 || total_vertical > 3 || total_diagonal_1 > 3 || total_d
 	running = false; 
 	winner = playerindex; 
 
-	puntuazioa1 = (turnoak*200) + (triple1*3000) + (doble1*500);
-	puntuazioa2 = (turnoak*200) + (triple2*3000) + (doble2*500);
+	puntuazioa1 = (turnoak1*200) + (triple1*3000) + (doble1*500);
+	puntuazioa2 = (turnoak2*200) + (triple2*3000) + (doble2*500);
 	if (current_player == player1){
 		puntuazioa1 = puntuazioa1 + 20000;
 	}else{
@@ -165,7 +166,9 @@ if(total_horizontal > 3 || total_vertical > 3 || total_diagonal_1 > 3 || total_d
 	$('.status').html(status_message);
 	return true;
 } else {
+	
 	if (current_player == player1){
+		turnoak1 ++;
 		if(total_horizontal == 3){ 
 			triple1 ++;
 			doble1 --;
@@ -195,6 +198,7 @@ if(total_horizontal > 3 || total_vertical > 3 || total_diagonal_1 > 3 || total_d
 			doble1 ++;
 		}
 	}else{
+		turnoak2 ++;
 		if(total_horizontal == 3){ 
 			triple2 ++;
 			doble2 --;
