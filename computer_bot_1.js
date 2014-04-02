@@ -14,7 +14,7 @@ function do_bot_move(board,playerindex) {
     for(var j in moves) {
   evaluated_moves[j] = evaluate_move(board,moves[j],current_player.playerindex);
   if(evaluated_moves[j].score>best_move.score) { best_move.score = evaluated_moves[j].score; best_move.x = moves[j].x; best_move.y = moves[j].y; }
-  //console.log("PROBA ENEKOThe move_score of move x: " + moves[j].x + ". y: " + moves[j].y + " is: " + evaluated_moves[j].score);
+  //console.log("The move_score of move x: " + moves[j].x + ". y: " + moves[j].y + " is: " + evaluated_moves[j].score);
   }
   return [best_move.x,best_move.y];
 }
