@@ -16,7 +16,6 @@ var doble2 = 0;
 var player = function(index,type) {
 	this.playerindex = index;
 	this.playertype = type;
-	
 };
 
 var do_move = function(board,row,column) {
@@ -164,8 +163,21 @@ if(total_horizontal > 3 || total_vertical > 3 || total_diagonal_1 > 3 || total_d
 	
 	status_message="Irabazlea dago. " + winner + " jokalariak irabazi du! <button onclick=location.reload(true)>Hasi Joko berria!</button>";
 	$('.status').html(status_message);
-	$('.punto1').html(puntuazioa1);
-	$('.punto2').html(puntuazioa2);
+	if(player1.playertype==='Human'){
+		var kokapena=posizioaRankinean(puntuazioa1);
+		if(kokapena!==-1){
+			var izena=prompt("Zorionak Jokalari 1, Rankinean sartu zara! Idatzi zure izena");
+			berriaSartu(izena,puntuazioa1,kokapena);
+		}
+	}
+	if(player2.playertype==='Human'){
+		var kokapena=posizioaRankinean(puntuazioa2);
+		if(kokapena!==-1){
+			var izena=prompt("Zorionak Jokalari 2, Rankinean sartu zara! Idatzi zure izena");
+			berriaSartu(izena,puntuazioa2,kokapena);
+		}
+	}
+	setRanking();
 	return true;
 } else {
 	
@@ -231,6 +243,47 @@ if(total_horizontal > 3 || total_vertical > 3 || total_diagonal_1 > 3 || total_d
 		}
 	}
 	return false;
+}
+
+function setRanking(){
+	for (i=1;i<11;i++){
+		$('.player_ranking_'+i).html(window.localStorage.getItem('izena'+i));
+		$('.punto'+i).html(window.localStorage.getItem('puntuazioa'+i));
+	}
+}
+
+function posizioaRankinean(puntuak){
+	if(window.localStorage.getItem('puntuazioa10')>puntuak){
+		return -1;
+	}else{
+		var i=10;
+		var irten = false;
+		while(!irten && i>0){
+			var puntuMax = window.localStorage.getItem('puntuazioa'+i);
+			if(puntuMax>puntuak){
+				irten=true;
+				i++;
+			}else{
+				i--;
+			}
+		}
+	}
+	if(irten){
+		return i;
+	}else{
+		return 1;
+	}
+}
+
+function berriaSartu(izena, puntuazioa, kokapena){
+	for(i=9;i>=kokapena;i--){
+		var unekoIzena=window.localStorage.getItem('izena'+i);
+		var unekoPuntuazioa=window.localStorage.getItem('puntuazioa'+i);
+		window.localStorage.setItem('izena'+(i+1),unekoIzena);
+		window.localStorage.setItem('puntuazioa'+(i+1),unekoPuntuazioa);
+	}
+	window.localStorage.setItem('izena'+kokapena,izena);
+	window.localStorage.setItem('puntuazioa'+kokapena,puntuazioa);
 	
 }
 
