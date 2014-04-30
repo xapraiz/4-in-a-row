@@ -1,0 +1,9 @@
+Puntuazioa: 
+	-Jokatzen zauden turno bakoitzeko 	200p
+	-2ko lerro bakoitzeko 			500p
+	-3ko lerro bakoitzeko 			3000p
+	-Irabazteagatik 					20000p
+
+Joko berezia:
+	-Puntuzazioa berdina da
+	-Joko normala bezala baina grabidate barik
